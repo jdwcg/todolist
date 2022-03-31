@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex</title>
+</head>
+<body>
+    <style>
+        .item {max-height: 0; overflow: hidden; transition: all .3s ease-in-out;} 
+    </style>
+    <div class="wrap" id="wrap">
+        <div class="trigger" id="trigger">trigger</div>
+        <div class="item" id="item">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, doloribus!
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="trigger">trigger</div>
+        <div class="item">foo2</div>
+    </div>
+    <div class="wrap">
+        <div class="trigger">trigger</div>
+        <div class="item">foo2</div>
+    </div>
+
+    <script>
+        var wrap = document.getElementsByClassName('wrap');
+        var trigger = document.getElementsByClassName('wrap');
+        console.log(wrap);
+
+        for(i=0; i<trigger.length; i++) {
+            trigger[i].addEventListener('click', function(){
+                var nextEl = this.lastElementChild;
+                nextEl.style.maxHeight ?
+                nextEl.style.maxHeight = null :
+                nextEl.style.maxHeight = nextEl.scrollHeight + 'px';
+            })
+
+        }
+    </script>
+</body>
+</html>

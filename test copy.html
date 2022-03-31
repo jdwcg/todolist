@@ -1,0 +1,35 @@
+
+<button class="accordion">Section 1</button>
+<div class="panel" style="display:none;">
+    <p>Content one</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel" style="display:none;">
+    <p>Content two</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel" style="display:none;">
+    <p>Content three</p>
+</div>
+
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            var allPanels = document.getElementsByClassName("panel");
+            var panel = this.nextElementSibling;
+
+            for (var i = 0, j = allPanels.length; i < j; i++) {
+                if (allPanels[i].style.display == "block") {
+                    allPanels[i].style.display = "none"
+                }
+            }
+            panel.style.display = "block";
+
+        });
+    }
+</script>
